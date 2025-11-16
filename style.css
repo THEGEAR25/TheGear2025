@@ -270,14 +270,28 @@ header p {
     to { transform: rotate(360deg); }
 }
 
-
-/* Footer */
+/* --- "COOLER" FOOTER (Glassmorphism) --- */
 footer {
+    /* Sizing and positioning */
+    width: 90%;
+    max-width: 450px;
+    margin: 2rem auto; /* Centers the box */
+    padding: 1rem 1.5rem;
     text-align: center;
-    color: #eee;
+
+    /* The "Glass" effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /* Text styling */
+    color: #f0f0f0;
+    font-size: 0.9rem;
     font-style: italic;
-    padding: 1rem;
-    width: 100%;
+    font-weight: 500;
 }
 
 /* Responsive */
@@ -294,7 +308,7 @@ footer {
     }
 }
 
-/* --- NEW STYLES FOR PROGRAM LOGO --- */
+/* --- STYLES FOR PROGRAM LOGO --- */
 
 /* Wrapper for the dropdown and logo */
 .program-wrapper {
@@ -314,4 +328,45 @@ footer {
     height: 60px;
     object-fit: contain;
     visibility: hidden; /* Hidden by default */
+}
+
+
+/* --- STYLES FOR PRIVACY MODAL --- */
+
+.modal-overlay {
+    position: fixed; /* Sits on top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--dark-text);
+}
+
+.modal-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content button {
+    width: 100%;
+    font-size: 1.2rem;
 }

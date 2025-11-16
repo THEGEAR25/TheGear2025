@@ -4,10 +4,10 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2cf39XLv-kC
 // --- Data from your C# app ---
 const programs = [
     // Graduate School
-    "Doctor of Philosophy in Technology Education Management",
+    "Doctor of Philosophy Major in Technology Education Management",
     "Master of Arts in Language and Literacy Education",
     "Master of Arts in Education",
-    "Master of Technology Education",
+    "Master in Technician Education",
     // COLLEGE OF ENGINEERING
     "Bachelor of Science in Mechanical Engineering",
     "Bachelor of Science in Electrical Engineering",
@@ -61,7 +61,6 @@ const programSelect = document.getElementById('program');
 const monthSelect = document.getElementById('b_month');
 const daySelect = document.getElementById('b_day');
 const yearSelect = document.getElementById('b_year');
-// --- barangayList variable has been removed ---
 
 // --- Review Panel Elements ---
 const reviewContainer = document.getElementById('review-container');
@@ -73,6 +72,10 @@ const confirmButton = document.getElementById('btn-confirm');
 const successContainer = document.getElementById('success-container');
 const newFormButton = document.getElementById('btn-new-form');
 const loader = document.getElementById('loader');
+
+// --- NEW MODAL ELEMENTS ---
+const privacyModal = document.getElementById('privacy-modal');
+const modalAcceptBtn = document.getElementById('modal-accept-btn');
 
 // --- Form Data Cache ---
 let formData = {};
@@ -127,8 +130,6 @@ function populatePrograms() {
         programSelect.add(option);
     });
 }
-
-// --- populateBarangays() function has been removed ---
 
 function populateBirthday() {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -311,7 +312,6 @@ function showNewForm() {
 // --- Event Listeners ---
 document.addEventListener('DOMContentLoaded', () => {
     populatePrograms();
-    // --- populateBarangays() call has been removed ---
     populateBirthday();
 });
 
@@ -323,6 +323,11 @@ newFormButton.addEventListener('click', showNewForm);
 monthSelect.addEventListener('change', updateDays);
 yearSelect.addEventListener('change', updateDays);
 programSelect.addEventListener('change', updateCollegeLogo);
+
+// --- NEW EVENT LISTENER FOR THE MODAL ---
+modalAcceptBtn.addEventListener('click', () => {
+    privacyModal.style.display = 'none';
+});
 
 // Add smart capitalization on 'blur' (like C# 'Leave' event)
 document.getElementById('fullName').addEventListener('blur', (e) => e.target.value = smartCapitalize(e.target.value));

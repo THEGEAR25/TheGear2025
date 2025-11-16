@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Gear - Yearbook Data System</title>
     <link rel="stylesheet" href="style.css">
+
     <link rel="icon" href="splash_logo.png" type="image/png">
+    
 </head>
 <body>
 
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Privacy & Data Notice</h2>
+            <p>
+                Welcome, students! Before you begin, please be aware that you are about to submit personal information (such as your name, program, and family details).
+            </p>
+            <p>
+                <strong>How will your data be used?</strong>
+                This information is collected for the <strong>sole purpose</strong> of creating and publishing "The Gear," the official university yearbook.
+            </p>
+            <p>
+                Your data will be kept secure and will only be accessible to the authorized yearbook staff and our adviser. It will not be shared with any third parties.
+            </p>
+            <p>
+                <em>By clicking "I Understand," you give your consent for your data to be collected and used for the yearbook.</em>
+            </p>
+            <button id="modal-accept-btn" class="btn btn-primary">I Understand</button>
+        </div>
+    </div>
     <main>
         <div class="container" id="form-container">
             <header>
@@ -60,13 +81,13 @@
                         <div class="form-group">
                             <label for="fathersName">Father's Name:</label>
                             <input type="text" id="fathersName" name="fathersName">
-                            <small>FIRST NAME, MIDDLE NAME, LAST NAME</small>
+                            <small>FIRST NAME MIDDLE NAME LAST NAME</small>
                         </div>
 
                         <div class="form-group">
                             <label for="mothersName">Mother's Name:</label>
                             <input type="text" id="mothersName" name="mothersName">
-                            <small>FIRST NAME, MIDDLE NAME, LAST NAME</small>
+                            <small>FIRST NAME MIDDLE NAME LAST NAME</small>
                         </div>
 
                         <div class="form-group">
